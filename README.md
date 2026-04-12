@@ -32,7 +32,7 @@ MoonRead/
 │   ├── image.png         
 │   ├── my_image.png       
 │   ├── audio.wav         
-│   ├──     
+│   ├──  my_audio.mp3   
 │  
 ├── src/
 │   ├── ocr.py             
