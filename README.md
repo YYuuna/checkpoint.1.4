@@ -55,32 +55,44 @@ Download from: https://github.com/UB-Mannheim/tesseract/wiki
 
 ## 📊 Results & Metrics
 
-### OCR Results
+### OCR Results — Simple Image
 | Library | Word Accuracy | Speed |
 |---------|-------------|-------|
 | pytesseract | 100% | Fast |
 | EasyOCR | ~90% | Slow |
 
+### OCR Results — Benchmark Dataset (getomni-ai/ocr-benchmark)
+| Sample | Accuracy |
+|--------|----------|
+| Sample 1 | 2.50% |
+| Sample 2 | 13.48% |
+| Sample 3 | 0.89% |
+| Sample 4 | 1.75% |
+| Sample 5 | 0.00% |
+| **Overall** | **2.01%** |
+
 ### ASR Results
 | Model | Transcription | WER |
 |-------|-------------|-----|
-| Whisper base |  Successful | ~0% |
+| Whisper base | ✅ Successful | ~0% |
 
+---
 ---
 
 ##  Observations
 
 **What worked best:**
-- Clean screenshots with black text on white background
-  gave 100% OCR accuracy
+- Clean screenshots with black text on white background gave 100% OCR accuracy
 - Clear and quiet audio gave perfect ASR transcription
 
 **What failed:**
-- Images with complex backgrounds confused OCR
+- Complex documents with tables, charts and markdown formatting gave only 2.01% accuracy
 - Noisy or silent audio gave empty ASR output
 
 **pytesseract vs EasyOCR:**
 - pytesseract was faster and more accurate for clean images
 - EasyOCR handled curved or stylized text better
 
----
+**Benchmark conclusion:**
+- pytesseract works well on simple clean text
+- Struggles with complex formatted documents (tables, invoices, charts)
